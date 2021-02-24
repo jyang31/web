@@ -1,7 +1,18 @@
-ol { 
-list-style: blue;
+.button {
+  border: 3px solid black;
+  margin-bottom: 10px;
+  cursor: pointer;
 }
 
-stuff {
-  display: block;
-}     
+body {
+	background-color: green;
+}
+
+h2 {
+  text-align: center;
+  color: blue;
+}
+
+p {
+	text-color: red;
+}
