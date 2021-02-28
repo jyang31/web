@@ -1,18 +1,33 @@
-.button {
-  border: 3px solid black;
-  margin-bottom: 10px;
-  cursor: pointer;
+.stuff{
+	display: inline-block;
+}
+
+.current{
+	background-color: blue;
+}
+
+nav{
+	border-bottom: 1px solid black;
+}
+
+
+li {
+	border: 2px solid blue;
+	padding:.5em;
+}
+
+ol{
+	list-style-type: none;
+	padding-left:0;
 }
 
 body {
 	background-color: green;
 }
 
-h2 {
-  text-align: center;
-  color: blue;
-}
 
 p {
-	text-color: red;
+	font-size: 12px;
+	font-family: comfortaa;
+	color: white;
 }
