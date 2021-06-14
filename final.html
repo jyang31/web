@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang = "en">
+	<head>
+		<title>Histogram and Word Scrambler</title>
+		<link rel = "stylesheet" href = "project.css" />
+	</head>
+	<body>
+		<h1>Histogram Generator/Word Scrambler for Plaintext Files</h1>
+		<h2>Jerry Yang, Period Five</h2>
+		<ul>
+			<li>
+				<h3><a href = "pythonproject.py" download> Project Link</a></h3>	
+			</li>
+			<li>
+				<h3>Project Description</h3>
+				<p>This is a project with two separate functions. It will take a text file with a list of words, each on separate lines, and return something depending on the function used. One function will return a list with all the words, but scrambled(the letter order is different) and the other function will return a histogram showing the frequency of the letters in the words.</p>
+			</li>
+			<li>
+				<h3>Instructions</h3>
+				<p>Using any text file with words in it, replace the text "100words.txt" with whatever the name of your text file is. Automatically, the Python file will run the histogram function, returning a graph with the frequency of every letter in the list. In order to run the word scrambler, close the tab of the graph and the scrambled list of words should appear.</p>
+			</li>
+			<li>
+				<h3> How the Project Works</h3>
+				<p>In total, the Python program uses five functions to return the histogram and the word scrambler. It also uses some non-function code at the beginning in order to read the plaintext file.</p>
+				<img src="picture1.jpg">
+				<p>The first part of the code imports the two Python modules that are used here, random and matplotlib. It is followed by two lines of code that read the text of the file and place it into a string. In this case, it is using a plaintext file of the 100 most common English words.</p>
+				<img src="picture2.jpg">
+				<p>This is the first function of the code. split_list takes the large string given by the text and splits it into a list that has characters as elements. In this case, this function would return ['t','h','e',...] </p>
+				<img src="picture3.jpg">
+				<p>This is the first part of the next function. This next function is make_histogram_lists, which prepares the values from the list of characters to be inputted as a list of integer values for matplotlib to interpret and create a graph for. First, there is a list of letters that lists every letter in a list. There are then 26 lists, named "list_of_(letter)".The purpose of these lists will become evident later in the function.</p>
+				<img src="picture4.jpg">
+				<p>The next part of the make_histogram_lists function uses a for loop to loop through every character in list_of_characters(the output from split_list) and it will check if it is equal to every letter using list_of_letters(for example, list_of_letters[0]="a", list_of_letters[1]="b", etc.) and place them in the appropriate list(so all the "a"s go in "list_of_as", "b"s in "list_of_bs", and so on).</p>
+				<img src="picture5.jpg">
+				<p>This last part of the function creates a list of lists that appends all the individual letter lists(list_of_a, list_of_b, etc)into the list. The list of lists will have lists as elements and the end of the function has a for loop that iterates through every list in list_of_lists and appends the length of every individual list into list_of_numbers(the new and final list). This will create a list of data values that can be used in the final function, make_histogram.</p>
+				<img src="picture6.jpg">
+				<p>This function uses the list that we generated from make_histogram_lists as the y-values for a bar graph/histogram, generated using matplotlib. It uses list_of_letters as the x-values, and creates a bar graph with the frequency of all letters in the given list. Below, you can see the result for the list of 100 most common English words.</p>
+				<img src="picture8.jpg">
+				<p></p>
+				<img src="picture7.jpg">
+				<p>The last two functions are meant to scramble the words and return a new list of the original words, but scrambled. The first function, make_list_of_words, splits the string into a list of individual words. The second function, make_scrambled_list, iterates through the words in wordlist(the output from make_list_of_words) and shuffles the words using the shuffle function from the Python random module. The second for loop iterates through every element in the scrambled list and joins all the elements together to become a new list of words. At the end, you can see an example output below.</p>
+				<img src="picture9.jpg">
+			</li>
+			<li>
+				<h3>List of Files</h3>
+				<ul>
+					<li>final.html: This html file.</li>
+					<li>pythonproject.py: The main Python file, containing both major functions. It reads the text file, creates the histogram, and scrambles the words in the text file.</li>
+					<li>project.css: Contains the styling information for final.html</li>
+					<li>100words.txt: A plaintext file with the 100 most common English words.</li>
+					<li>1000words.txt: A plaintext file with the 1000 most common English words.</li>
+					<li>picture1.jpg: A picture used for this webpage.</li>
+					<li>picture2.jpg: A picture used for this webpage.</li>
+					<li>picture3.jpg: A picture used for this webpage.</li>
+					<li>picture4.jpg: A picture used for this webpage.</li>
+					<li>picture5.jpg: A picture used for this webpage.</li>
+					<li>picture6.jpg: A picture used for this webpage.</li>
+					<li>picture7.jpg: A picture used for this webpage.</li>
+					<li>picture8.jpg: A picture used for this webpage.</li>
+					<li>picture9.jpg: A picture used for this webpage.</li>	
+				</ul>
+			</li>
+			<li>
+				<h3> Resources Used</h3>
+				<ul>
+					<li><a href ="https://matplotlib.org/">MatPlotLib Python module</a></li>
+					<li><a href ="https://docs.python.org/3/library/random.html">Random Python module</a></li>
+					<li><a href ="https://thonny.org/">Thonny</a></li>
+					<li><a href ="https://notepad-plus-plus.org/downloads/">Notepad++</a></li>
+				</ul>
+			</li>
+			<li>
+				<h3>Bugs, Errors, and Things to be Aware of</h3>
+				<ul>
+					<li>Each inputted plaintext file must have separate words for separate lines in order for the program to work as intended. If your words are separated by commas or spaces on the same line, replace lines 8 and 144 with new_split_list = list.split(',')or new_split_list = list.split(' ') for line 8 and list_of_words = big_file.split(',')or list_of_words = big_file.split(' ') for line 144.</li>
+					<li>Remember to replace "100words.txt" in line 4 with whatever the name of your text file is.</li>
+					<li>This will not work if your file is not in UTF-8.</li>
+					<li>The histogram will not work if your words are not all lowercase.</li>
+				</ul>
+			</li>
+		</ul>
+		
+		
+	</body>
